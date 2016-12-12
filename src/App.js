@@ -11,16 +11,10 @@ class App extends Component {
     }
     componentDidMount() {
         const database = firebase.database().ref('/messages')
-        /*var message = {text: "Hello"}
 
-        database.push(message)*/
         database.once('value', snap => {
-            snap.forEach(childSnap => {
-                var childData = childSnap.val();
-                var updatedMessages = this.state.messages.concat(childData.text)
-                this.setState({
-                    messages: updatedMessages
-                })
+            this.setState({
+                messages: snap.val()
             })
         })
     }
@@ -28,11 +22,7 @@ class App extends Component {
 
 
     render() {
-        return (<div>
-            {this.state.messages.map((message, idx) => {
-                return <div>{message}</div>
-            })}
-        </div>);
+        return (<div>{alert(this.state.messages.toSource())}</div>);
     }
 }
 
