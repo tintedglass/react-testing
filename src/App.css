@@ -22,3 +22,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.messageContainer{
+  border:1px solid dimgrey;
+  box-shadow: 3px 3px 2px #cccccc;
+  width:300px;
+  margin-bottom:8px;
+}
