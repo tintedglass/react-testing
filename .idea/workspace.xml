@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57fb6015-1ec2-4c01-9e23-9e318d6c80f0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Message.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -325,7 +322,7 @@
       <workItem from="1481427039972" duration="12967000" />
       <workItem from="1481468332628" duration="1164000" />
       <workItem from="1481471323850" duration="6516000" />
-      <workItem from="1481557800117" duration="13677000" />
+      <workItem from="1481557800117" duration="13692000" />
     </task>
     <task id="LOCAL-00001" summary="Directory Mapping">
       <created>1481558059477</created>
@@ -341,11 +338,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481561567399</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Get messages from database">
+      <created>1481580503249</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1481580503249</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43516000" />
+    <option name="totallyTimeSpent" value="43531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -379,7 +383,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Directory Mapping" />
     <MESSAGE value="Store in messages variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Store in messages variable" />
+    <MESSAGE value="Get messages from database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get messages from database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
