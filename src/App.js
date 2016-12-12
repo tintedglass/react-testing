@@ -12,19 +12,19 @@ class App extends Component {
     }
 
     componentDidMount() {
-        let messageRef = firebase.database().ref('messages');
-        messageRef.off();
+        let database = firebase.database().ref('messages');
+        database.off();
 
-        let setMessage = function(data) {
-            let val = data.val();
-            this.displayMessage(data.key, val.text);
+        let setMessage = function(message) {
+            let messageValues = message.val();
+            this.createMessage(message.key, messageValues.text);
             }.bind(this);
 
-        messageRef.limitToLast(12).on('child_added', setMessage);
-        messageRef.limitToLast(12).on('child_changed', setMessage);
+        database.limitToLast(12).on('child_added', setMessage);
+        database.limitToLast(12).on('child_changed', setMessage);
     }
 
-    displayMessage(key, text){
+    createMessage(key, text){
         let thisMessage = <Message key={key} text={text} />;
         this.setState({
             messages: this.state.messages.concat(thisMessage)
