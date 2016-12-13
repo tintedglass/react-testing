@@ -38,7 +38,7 @@ class App extends Component {
     // Creates a message @param key: the key of the message in database @param text: the text of the message
     createMessage(key, text){
         // Create a new Message component with key and text df
-        let thisMessage = <Message key={key} text={text} />;
+        let thisMessage = <Message key={key} id={key} text={text} />;
 
         // Add this new Message component to this state messages array
         this.setState({
