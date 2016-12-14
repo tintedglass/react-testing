@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Message from './Message';
+import MessageBuilder from './MessageBuilder';
 // Import all firebase modules
 import * as firebase from 'firebase';
 
@@ -9,9 +10,10 @@ class App extends Component {
         super();
         this.state = {
             // Set initial state of messages array to blank
-            messages: []
+            messages: {}
         };
     }
+
 
     componentDidMount() {
         // Connect to database
@@ -29,25 +31,32 @@ class App extends Component {
 
         // Grab the last 12 rows from the database, on child added, run the setMessage function above
         database.on('child_added', setMessage);
-
-        // Grab the last 12 rows from the database and on change, do a thing
-        //database.limitToLast(12).on('child_changed', doathing);
     }
 
     // Creates a message @param key: the key of the message in database @param text: the text of the message
     createMessage(key, text){
         // Create a new Message component with key and text df
         let thisMessage = <Message key={key} id={key} text={text} />;
+        let newMessages = this.state.messages;
+        newMessages[key] = thisMessage;
 
         // Add this new Message component to this state messages array
         this.setState({
-            messages: this.state.messages.concat(thisMessage)
+            messages: newMessages
         })
     }
 
     // Return the messages array of Message components
     render() {
-        return (<div>{this.state.messages}</div>);
+        return (
+            <div>
+                {Object.keys(this.state.messages).map((key) => {
+                    return <div>{this.state.messages[key]}</div>
+                })}
+
+                <MessageBuilder />
+            </div>
+        );
     }
 }
 
